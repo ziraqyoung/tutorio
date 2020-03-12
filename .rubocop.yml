@@ -15,6 +15,16 @@ AllCops:
     # Exclude:
     - '**/test/**/*'
 
+Metrics/AbcSize:
+  Max: 18
+
+Layout/LineLength:
+  Max: 120
+
+Metrics/MethodLength:
+  CountComments: false
+  Max: 15
+
 # Prefer assert_not over assert !
 Rails/AssertNot:
   Include:
@@ -202,7 +212,7 @@ Style/RedundantBegin:
 
 Style/RedundantReturn:
   Enabled: true
-  AllowMultipleReturnValues: true
+  AllowMultipleReturnValues: tre
 
 Style/Semicolon:
   Enabled: true
