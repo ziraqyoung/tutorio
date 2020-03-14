@@ -4,7 +4,24 @@
 
 //site variables
 $bg-color: #1d2625;
+$bg-color-light: #33403e;
+$secondary-bg-color: #293331;
 
 body {
   background-color: $bg-color;
+}
+
+form {
+  input {
+    background-color: $bg-color-light;
+    border: 1px solid $secondary-bg-color;
+
+    &:focus {
+      background-color: $secondary-bg-color;
+    }
+  }
+}
+
+.purchase-summary {
+  background-color: $bg-color-light;
 }
