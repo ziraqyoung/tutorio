@@ -1,10 +1,27 @@
-%h2 Forgot your password?
-= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .actions
-    = f.submit "Send me reset password instructions"
-= render "devise/shared/links"
+.bg-teal-800
+  .max-w-screen-lg.mx-auto
+    .flex.py-10
+      .flex.text-white.items-center(class="w-3/4")
+        = image_tag "student/128/white.svg", class: 'h-32 w-32'
+        %div.ml-6
+          %h1.text-4xl.font-bold Reset Password
+          %p.text-teal-400.mt-4 Account Management
+
+      .text-white.flex.items-center.justify-between.text-center(class="w-1/4")
+        = link_to '#', class: 'block mx-auto group px-4 py-1 rounded border border-white bg-transparent hover:bg-white' do
+          %p.text-white.group-hover:text-teal-600 Need help? 
+          %p.text-teal-200.group-hover:text-gray-300 Contact Us 
+
+.max-w-screen-sm.mx-auto.mt-10
+  .flex.justify-around.w-full
+    = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: 'w-3/4' }) do |f|
+      = render "devise/shared/error_messages", resource: resource
+      .field.mt-4
+        = f.label :email, class: 'text-sm text-gray-400'
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'mt-1 relative block w-full px-4 py-2 placeholder-gray-500 rounded-md focus:outline-none focus:z-10 sm:text-sm sm:leading-5', placeholder: 'Your password...'
+
+        %span.text-xs.text-gray-500 We will email you with info on how to reset your password.
+      .actions.text-center.mt-3
+        = f.submit "Send me reset password instructions", class: 'cursor-pointer px-3 py-2 text-white bg-red-600 hover:bg-red-700 font-bold rounded-md'
+    -# = render "devise/shared/links"

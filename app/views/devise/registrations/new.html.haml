@@ -1,4 +1,4 @@
-.bg-teal-600
+.bg-teal-800
   .max-w-screen-lg.mx-auto
     .flex.py-16
       .flex.text-white.items-center(class="w-3/4")
@@ -13,7 +13,7 @@
       .text-white.flex.items-center.justify-between.text-center(class="w-1/4")
         = link_to "#", class: 'block mx-auto group px-5 py-2 rounded border border-white bg-transparent hover:bg-white' do
           %p.text-white.group-hover:text-teal-600 Questions?
-          %p.text-teal-200.group-hover:text-gray-300 Visit our Help Center
+          %p.text-teal-200.group-hover:text-gray-500 Visit our Help Center
 
 .max-w-screen-lg.mx-auto.mt-10.px-6
   .flex.justify-around.w-full
@@ -41,7 +41,7 @@
         -# .flex.items-center.justify-center
           -# = render "devise/shared/links"
     %div.w-full.ml-6.pt-4
-      .purchase-summary.p-4
+      .purchase-summary.p-4.rounded-lg
         %h3.mb-1mb-3.uppercase.text-sm.font-bold.tracking-tighter.Purchase summary
         %div.flex.mt-3.justify-between
           %strong.text-gray-500 Subcription
@@ -54,7 +54,7 @@
             %p.text-gray-500 Price
             %span US $9 per month
         %div
-          %div.flex.mt-2
-            %input(type="checkbox")
+          %div.flex.mt-2.items-center
+            %input.form-checkbox.h-4.w-4.text-indigo-600.transition.duration-150.ease-in-out(type="checkbox")
             %p.ml-2 Terms and conditions
           %span.block.mt-1.text-gray-600.text-xs By checking i agree to terms and condition.
