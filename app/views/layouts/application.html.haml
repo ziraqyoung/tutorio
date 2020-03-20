@@ -3,12 +3,15 @@
   %head
     %meta{ :content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type" }/
     %title Tutorio
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body.text-white
-    = render 'layouts/application/alert'
     = render 'layouts/application/header'
-    = yield
+    %div.pt-16
+      = render 'layouts/application/alert'
+      = yield
+    = render 'layouts/application/footer'

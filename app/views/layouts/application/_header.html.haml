@@ -1,4 +1,4 @@
-%header
+%header.fixed.top-0.w-full.z-10
   .flex.max-w-screen-xl.mx-auto.h-16.justify-between.px-4.py-2
     .flex.items-center(class="w-1/2")
       = link_to "Home", root_path, class: 'text-lg hover:bg-gray-800'
@@ -8,9 +8,9 @@
         = text_field_tag :q, nil, class: 'w-2/3 relative px-4 py-2 placeholder-gray-500 rounded-md focus:outline-none focus:z-10 sm:text-sm sm:leading-5', placeholder: 'Search a course'
         = submit_tag "Search"
 
-    - if user_signed_in?
+    - if instructor_signed_in?
 
-      .flex.items-center(class="w-1/2 flex justify-end")
+      #instructor-settings.flex.items-center(class="w-1/2 flex justify-end")
         %div.inline-block.relative.leading-none{data: { controller: 'dropdown' }}
           %div.inline-block.select-none{ data: { action: 'click->dropdown#toggle click@window->dropdown#hide' }, role: 'button'}
             %button.flex.items-center.text-sm.rounded-full.focus:outline-none.focus:border-white.transition.duration-150.ease-in-out
@@ -19,12 +19,12 @@
                 %path{"clip-rule" => "evenodd", :d => "M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z", "fill-rule" => "evenodd"}
           %div.origin-top-right.absolute.right-0.w-48.bg-white.rounded-md.shadow-lg.hidden.border.pin-r.mt-2{data: { target: 'dropdown.menu'}}
             .mt-2.pl-4.border-b
-              .text-xs.text-gray-500.font-semibold.mb-1 Student
+              .text-xs.text-gray-500.font-semibold.mb-1 Instructor
             = link_to 'Dashboard', '#', class: 'border-b block px-4 py-2 leading-5 text-gray-700 hover:bg-gray-300 focus:outline-none focus:bg-gray-300 transition duration-150 ease-in-out'
             .mt-2.pl-4.border-b
               .text-xs.text-gray-500.font-semibold.mb-1 Account
-            = link_to "Edit Account", edit_user_registration_path, class: 'block px-4 py-2 leading-5 text-gray-700 hover:bg-gray-300 focus:outline-none focus:bg-gray-300 transition duration-150 ease-in-out'
-            = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'block px-4 py-2 leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out'
+            = link_to "Edit Account", edit_instructor_registration_path, class: 'block px-4 py-2 leading-5 text-gray-700 hover:bg-gray-300 focus:outline-none focus:bg-gray-300 transition duration-150 ease-in-out'
+            = link_to 'Logout', destroy_instructor_session_path, method: :delete, class: 'block px-4 py-2 leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out'
         %button.rounded.text-lg.bg-grey-800.hover:bg-grey-700.ml-4
           %svg.h-8.w-8.text-gray-400.hover:text-gray-100.rounded-full{fill: 'currentColor', :viewbox => "0 0 512 512", :xmlns => "http://www.w3.org/2000/svg"}
             %path{:d => "M467.812 431.851l-36.629-61.056a181.363 181.363 0 01-25.856-93.312V224c0-67.52-45.056-124.629-106.667-143.04V42.667C298.66 19.136 279.524 0 255.993 0s-42.667 19.136-42.667 42.667V80.96C151.716 99.371 106.66 156.48 106.66 224v53.483c0 32.853-8.939 65.109-25.835 93.291L44.196 431.83a10.653 10.653 0 00-.128 10.752c1.899 3.349 5.419 5.419 9.259 5.419H458.66c3.84 0 7.381-2.069 9.28-5.397 1.899-3.329 1.835-7.468-.128-10.753zM188.815 469.333C200.847 494.464 226.319 512 255.993 512s55.147-17.536 67.179-42.667H188.815z"}

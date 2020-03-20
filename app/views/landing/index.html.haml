@@ -1,1 +1,10 @@
-%header.bg-gray-900
+.parallax.h-screen.bg-teal-500.p-16
+  %div.grid.grid-cols-2.max-w-screen-lg.mx-auto
+    %div
+      %h2.text-5xl.font-bold.font-serif.tracking-tight Learn Programming
+      %p.mt-2 Bussiness, Technology and Creative skills taught by industrial experts. Explore a wide range of skills with our professional tutorials
+      %button.mt-10.px-6.bg-white.text-gray-900.py-2.rounded-md.text-xl.hover:bg-gray-200 Browse Courses
+      %p.mt-6.font-bold.text-gray-300.underline.hover:no-underline
+        = link_to 'Are you a teacher?', new_instructor_registration_path, class: 'instructor_sign-up-button'
+    %div
+      =image_tag 'macbook-teal.png', class: 'object-cover'

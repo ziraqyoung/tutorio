@@ -7,7 +7,8 @@ $bg-color: #1d2625;
 $bg-color-light: #33403e;
 $secondary-bg-color: #293331;
 
-body {
+body,
+header {
   background-color: $bg-color;
 }
 
