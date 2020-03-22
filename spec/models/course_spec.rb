@@ -60,4 +60,21 @@ RSpec.describe Course, type: :model do
       expect(course).not_to be_valid
     end
   end
+
+  context 'Scopes' do
+    it 'default_scope orders by descending created_at' do
+      first_course = create(:course)
+      second_course = create(:course)
+      expect(Course.all).to eq([second_course, first_course])
+    end
+
+    it 'by_branch scope gets courses by a particular branch' do
+      category = create(:category)
+      create(:course, category_id: category.id)
+      create_list(:course, 10)
+      courses = Course.by_branch(category.branch)
+      expect(courses.count).to eq 1
+      expect(courses[0].category.branch).to eq category.branch
+    end
+  end
 end
