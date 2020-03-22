@@ -3,6 +3,14 @@ require 'rails_helper'
 RSpec.describe Instructor, type: :model do
   let(:instructor) { build(:instructor) }
 
+  context 'Association' do
+    it 'has_many courses' do
+      association = described_class.reflect_on_association(:courses).macro
+      expect(association).to eq(:has_many)
+    end
+  end
+
+
   context 'Validations' do
     it 'is valid' do
       expect(instructor).to be_valid
@@ -13,12 +21,12 @@ RSpec.describe Instructor, type: :model do
       expect(instructor).not_to be_valid
     end
 
-    it 'is not valid without #profile_name' do
+    it 'is not valid without profile_name' do
       instructor.profile_name = nil
       expect(instructor).to be_valid
     end
 
-    it "is not valid with a too short full_name" do
+    it "is not valid with full_name, shorter than 4 characters" do
       instructor.full_name = 'is'
       expect(instructor).not_to be_valid
     end
@@ -30,6 +38,16 @@ RSpec.describe Instructor, type: :model do
 
     it 'is not valid with an invalid email format' do
       instructor.email = 'testtest.com'
+      expect(instructor).not_to be_valid
+    end
+
+    it 'is not valid without a password' do
+      instructor.password = nil
+      expect(instructor).not_to be_valid
+    end
+
+    it 'is not valid with password, shorter than 5 character' do
+      instructor.password = 'a' * 3
       expect(instructor).not_to be_valid
     end
 

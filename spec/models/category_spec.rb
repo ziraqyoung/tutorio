@@ -1,9 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe Category, type: :model do
-  let(:category) { build(:category) }
+  context 'Associations' do
+    it 'has_many courses' do
+      association = described_class.reflect_on_association(:courses).macro
+      expect(association).to eq(:has_many)
+    end
+  end
 
   context 'Validation' do
+    let(:category) { build(:category) }
     it 'not valid if branch is empty' do
       category.branch = nil
       expect(category).not_to be_valid
