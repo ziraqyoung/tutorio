@@ -1,9 +1,18 @@
 Rails.application.routes.draw do
+  root to: "landing#index"
   devise_for :instructors, path: "instructors", controllers: {
                              sessions: "instructors/sessions",
                              registrations: "instructors/registrations",
                            }
   devise_for :users
-  root to: "landing#index"
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  resources :courses do
+    collection do
+      get 'development'
+      get 'design'
+      get 'photography'
+      get 'marketing'
+      get 'business'
+    end
+  end
 end
