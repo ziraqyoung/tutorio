@@ -1,5 +1,5 @@
-%div{ data: { controller: 'course-overlay', 'tippy-content': "#{ render partial: 'courses/course/course_overlay', locals: { course: course } }" }}
-  %div.relative.course-container.h-48.flex.flex-col.overflow-hidden.border.border-teal-900.rounded-md{ data: { action: 'click->course-overlay#showOverlay click@window->course-overlay#hideOverlays'}}
+%div.cursor-pointer{ data: { controller: 'course-overlay', 'tippy-content': "#{ render partial: 'courses/course/course_overlay', locals: { course: course } }" }}
+  %div.cursor-pointer.relative.course-container.h-48.flex.flex-col.overflow-hidden.border.border-teal-900.rounded-md{ data: { action: 'click->course-overlay#showOverlay'}}
     = image_tag 'paths/angular_430x168.png', class: 'h-full w-full object-cover'
     .absolute.course-overlay.inset-x-0.h-full.bg-gray-700.p-2{ data: { target: 'course-overlay.overlay' } }
       %div.flex.justify-between.items-center
