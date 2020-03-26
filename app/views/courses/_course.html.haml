@@ -1,0 +1,13 @@
+%div{ data: { controller: 'course-overlay', 'tippy-content': "#{ render partial: 'courses/course/course_overlay', locals: { course: course } }" }}
+  %div.relative.course-container.h-48.flex.flex-col.overflow-hidden.border.border-teal-900.rounded-md{ data: { action: 'click->course-overlay#showOverlay click@window->course-overlay#hideOverlays'}}
+    = image_tag 'paths/angular_430x168.png', class: 'h-full w-full object-cover'
+    .absolute.course-overlay.inset-x-0.h-full.bg-gray-700.p-2{ data: { target: 'course-overlay.overlay' } }
+      %div.flex.justify-between.items-center
+        %h5.text-gray-300.text-sm.tracking-wide.course-title= course.title
+        %span
+          %svg.fill-current.text-gray-600.inline-block.h-6.w-6{:viewbox => "0 0 20 20", :xmlns => "http://www.w3.org/2000/svg"}>
+            %path{:d => "M10 3.22l-.61-.6a5.5 5.5 0 0 0-7.78 7.77L10 18.78l8.39-8.4a5.5 5.5 0 0 0-7.78-7.77l-.61.61z"}
+      %p.mt-1.text-xs.text-gray-500.italic= course.instructor.full_name
+      %div.mt-2.flex.justify-between.items-end
+        %span.text-xs.text-gray-500 5stars
+        %span.text-xs.text-gray-500 #{course.duration} hours

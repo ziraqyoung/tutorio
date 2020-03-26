@@ -1,0 +1,23 @@
+%div.max-w-screen-xl.mt-1.mr-auto.pb-4
+  = link_to 'Library', '#', class: 'inline-block text-gray-500 ml-6 ont-semibold hover:text-white'
+  = link_to 'Explore', '#', class: 'ml-6 text-gray-500 font-semibold hover:text-white'
+  = link_to 'Featured', '#', class: 'ml-6 text-gray-500 font-semibold hover:text-white'
+  = link_to 'Development', development_courses_path, class: 'ml-6 ml-6 border-b-4 border-teal-600 font-semibold hover:text-white'
+  = link_to 'Design', design_courses_path, class: 'ml-6 text-gray-500 font-semibold hover:text-white'
+  = link_to 'Photography', photography_courses_path, class: 'ml-6 text-gray-500 font-semibold hover:text-white'
+  = link_to 'Business', business_courses_path, class: 'ml-6 text-gray-500 font-semibold hover:text-white'
+  = link_to 'Marketing', marketing_courses_path, class: 'ml-6 text-gray-500 font-semibold hover:text-white'
+%div.bg-teal-700
+  .max-w-screen-lg.mx-auto.py-20
+    %h1.text-6xl.font-bold.font-serif.tracking-tight Development
+    %p.mt-4.text-xl
+      Get the Technology and Creative Skills you need to launch
+      %br your career by learning from our industry experts.
+    .mt-6.flex.items-center
+      = link_to 'Start Trial', '#', class: 'inline-block px-4 py-2 bg-white text-gray-900 rounded-md text-xl hover:bg-gray-200'
+      = link_to 'Explore Development Trial', '#', class: 'ml-4 inline-block px-4 py-2 bg-tranparent text-xl text-white border border-white rounded-md hover:bg-white hover:text-teal-600'
+
+%div.max-w-screen-lg.mx-auto.px-4.pt-10
+  %h2.text-xl.text-gray-400.font-semibold Top Development Courses
+  %div.mt-4.grid.grid-cols.sm:grid-cols-2.md:grid-cols-3.lg:grid-cols-4.gap-4
+    = render @courses
