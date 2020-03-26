@@ -19,23 +19,23 @@ def seed_categories
   business = ['Communication', 'Leadership', 'Management', 'Career Development']
 
   development.each do |name|
-    Category.create(branch: 'Development', name: name)
+    Category.create(branch: 'development', name: name)
   end
 
   design.each do |name|
-    Category.create(branch: 'Design', name: name)
+    Category.create(branch: 'design', name: name)
   end
 
   photography.each do |name|
-    Category.create(branch: 'Photography', name: name)
+    Category.create(branch: 'photography', name: name)
   end
 
   marketing.each do |name|
-    Category.create(branch: 'Marketing', name: name)
+    Category.create(branch: 'marketing', name: name)
   end
 
   business.each do |name|
-    Category.create(branch: 'Business', name: name)
+    Category.create(branch: 'business', name: name)
   end
 end
 
