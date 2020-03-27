@@ -1,4 +1,8 @@
 class CoursesController < ApplicationController
+  def show
+    @course = Course.find(params[:id])
+  end
+
   def development
     courses_for_branch(params[:action])
   end
