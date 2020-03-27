@@ -22,5 +22,6 @@ class CoursesController < ApplicationController
   private
     def courses_for_branch(branch)
       @courses = Course.by_branch(branch)
+      @branches = Category.distinct.pluck(:branch)
     end
 end

@@ -1,0 +1,13 @@
+= render partial: 'courses/branch/categories'
+%div.bg-teal-700
+  .max-w-screen-lg.mx-auto.py-20
+    %h1.text-6xl.font-bold.font-serif.tracking-tight.capitalize= branch
+    %p.mt-4.text-xl= lead_text
+    .mt-6.flex.items-center
+      = link_to 'Start Trial', '#', class: 'inline-block px-4 py-2 bg-white text-gray-900 rounded-md text-xl hover:bg-gray-200'
+      = link_to "Explore #{branch} Trial", '#', class: 'capitalize ml-4 inline-block px-4 py-2 bg-tranparent text-xl text-white border border-white rounded-md hover:bg-white hover:text-teal-600'
+
+%div.max-w-screen-lg.mx-auto.px-4.pt-10
+  %h2.text-xl.text-gray-400.font-semibold.capitalize Top #{branch} Courses
+  %div.mt-4.grid.grid-cols.sm:grid-cols-2.md:grid-cols-3.lg:grid-cols-4.gap-4
+    = render @courses
