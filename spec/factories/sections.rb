@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :section do
-    course { nil }
-    section_title { "MyString" }
+    section_title { 'First section' }
+    association :course, strategy: :create
   end
 end

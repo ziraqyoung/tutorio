@@ -68,6 +68,30 @@ def seed_courses
   end
 end
 
+def seed_course_sections
+  courses = Course.all
+
+  courses.each_with_index do |course, index|
+    4.times do |n|
+      Section.create(section_title: "course#{index}-section#{n} section", course: course)
+    end
+  end
+end
+
+def seed_section_lessons
+  sections = Section.all
+
+  sections.each_with_index do |section, index|
+    4.times do |n|
+      Lesson.create(lesson_title: "section#{index}-lesson#{n} section", section: section)
+    end
+  end
+end
+
+
 seed_instructors
 seed_categories
 seed_courses
+seed_course_sections
+seed_section_lessons
+
