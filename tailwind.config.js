@@ -1,6 +1,11 @@
 module.exports = {
   theme: {
     extend: {
+      colors: {
+        'brand-primary': '#1D2625',
+        'brand-secondary': '#33403E',
+        'brand-gray': '#869695'
+      },
       maxHeight: {
         '0': '0'
       },
