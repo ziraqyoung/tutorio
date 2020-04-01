@@ -21,18 +21,18 @@
         .field.mt-4
           = f.label :email, class: 'text-xs text-gray-400'
           %br/
-          = f.email_field :email, autocomplete: "email", class: 'mt-1 relative block w-full px-4 py-2 placeholder-gray-500 rounded-md focus:outline-none focus:z-10 sm:text-sm sm:leading-5', placeholder: 'Email address...'
+          = f.email_field :email, email", class: 'mt-1 relative block w-full px-4 py-2 placeholder-gray-500 rounded-md focus:outline-none focus:z-10 sm:text-sm sm:leading-5', placeholder: 'Email address...'
         .field.mt-4
           = f.label :password, class: 'text-xs text-gray-400'
           - if @minimum_password_length
             %em.text-xs.text-gray-400
               (#{@minimum_password_length} characters minimum)
           %br/
-          = f.password_field :password, autocomplete: "new-password", class: 'mt-1 relative block w-full px-4 py-2 placeholder-gray-500 rounded-md focus:outline-none focus:z-10 sm:text-sm sm:leading-5', placeholder: 'Password...'
+          = f.password_field :password, class: 'mt-1 relative block w-full px-4 py-2 placeholder-gray-500 rounded-md focus:outline-none focus:z-10 sm:text-sm sm:leading-5', placeholder: 'Password...'
         .field.mt-4
           = f.label :password_confirmation, class: 'text-xs text-gray-400'
           %br/
-          = f.password_field :password_confirmation, autocomplete: "new-password", class: 'mt-1 relative block w-full px-4 py-2 placeholder-gray-500 rounded-md focus:outline-none focus:z-10 sm:text-sm sm:leading-5', placeholder: 'Password confirmation...'
+          = f.password_field :password_confirmation, class: 'mt-1 relative block w-full px-4 py-2 placeholder-gray-500 rounded-md focus:outline-none focus:z-10 sm:text-sm sm:leading-5', placeholder: 'Password confirmation...'
         .actions.mt-2
           = f.submit "Sign up", class: 'cursor-pointer mt-2 px-10 py-1 text-white text-2xl bg-red-800 hover:bg-red-700 font-bold rounded-md'
 

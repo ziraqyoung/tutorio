@@ -4,7 +4,7 @@
       .flex.text-white.items-center(class="w-3/4")
         = image_tag "student/128/white.svg", class: 'h-32 w-32'
         %div.ml-6
-          %h1.text-4xl.font-bold Sign In
+          %h1.text-5xl.font-bold.font-serif.tracking-tight Student Log In
           %p.text-teal-400.mt-4 Account Management
 
       .text-white.flex.items-center.justify-between.text-center(class="w-1/4")
@@ -18,11 +18,11 @@
       .field.mt-4
         = f.label :email, class: 'text-xs text-gray-400'
         %br/
-        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'mt-1 relative block w-full px-4 py-2 placeholder-gray-500 rounded-md focus:outline-none focus:z-10 sm:text-sm sm:leading-5', placeholder: 'Your password...'
+        = f.email_field :email, autofocus: true, class: 'mt-1 relative block w-full px-4 py-2 placeholder-gray-500 rounded-md focus:outline-none focus:z-10 sm:text-sm sm:leading-5', placeholder: 'Your password...'
       .field.mt-4
         = f.label :password, class: 'text-xs text-gray-400'
         %br/
-        = f.password_field :password, autocomplete: "current-password", class: 'mt-1 relative block w-full px-4 py-2 placeholder-gray-500 rounded-md focus:outline-none focus:z-10 sm:text-sm sm:leading-5', placeholder: 'Your password...'
+        = f.password_field :password, class: 'mt-1 relative block w-full px-4 py-2 placeholder-gray-500 rounded-md focus:outline-none focus:z-10 sm:text-sm sm:leading-5', placeholder: 'Your password...'
       - if devise_mapping.rememberable?
         .field.mt-4.flex.justify-between.items-center
           .flex.items-center

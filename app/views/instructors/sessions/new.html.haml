@@ -1,17 +1,34 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "instructors/shared/links"
+.bg-teal-800
+  .max-w-screen-lg.mx-auto
+    .flex.py-10
+      .flex.text-white.items-center(class="w-3/4")
+        = image_tag "teacher/128/white.svg", class: 'h-32 w-32'
+        %div.ml-6
+          %h1.text-5xl.font-bold.font-serif.tracking-tight Instructor Log In
+          %p.text-teal-400.mt-4 Account Management
+      .text-white.flex.items-center.justify-between.text-center(class="w-1/4")
+        = link_to new_instructor_registration_path, class: 'block mx-auto group px-5 py-2 rounded border border-white bg-transparent hover:bg-white' do
+          %p.text-white.group-hover:text-teal-600 Don't you have an account?
+          %p.text-teal-200.group-hover:text-gray-500 Sign up Today 
+
+.max-w-screen-sm.mx-auto.mt-10
+  .flex.justify-around.w-full
+    = form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'w-3/4' }) do |f|
+      .field.mt-4
+        = f.label :email, class: 'text-xs text-gray-400'
+        %br/
+        = f.email_field :email, autofocus: true, class: 'mt-1 relative block w-full px-4 py-2 bg-brand-secondary placeholder-gray-500 rounded-md focus:outline-none focus:z-10 sm:text-sm sm:leading-5', placeholder: 'Your password...'
+      .field.mt-4
+        = f.label :password, class: 'text-xs text-gray-400'
+        %br/
+        = f.password_field :password, class: 'mt-1 relative block w-full px-4 py-2  placeholder-gray-500 rounded-md focus:outline-none focus:z-10 sm:text-sm sm:leading-5', placeholder: 'Your password...'
+      - if devise_mapping.rememberable?
+        .field.mt-4.flex.justify-between.items-center
+          .flex.items-center
+            = f.check_box :remember_me, class: 'form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out'
+            = f.label :remember_me, class: 'text-sm ml-2'
+          = render 'devise/shared/forgot_password'
+      .actions.text-center.mt-2
+        = f.submit "Log in", class: 'cursor-pointer px-8 py-2 text-white bg-red-600 hover:bg-red-700 font-bold rounded-md'
+
+-# = render "instructors/shared/links"

@@ -1,6 +1,6 @@
 %div.wrap-collapsible
   %input.hidden.toggle{ id: section.id, type: "checkbox", data: { target: 'toggle' } }
-  %label.lbl-toggle.block.w-full.cursor-pointer.px-4.py-2.text-left.hover:text-teal-600{ for: section.id, data: { target: 'lbl-toggle' }  }= section.section_title
+  %label.lbl-toggle.block.w-full.cursor-pointer.px-4.py-2.text-left.hover:text-teal-600{ tabindex:"0", for: section.id, data: { target: 'lbl-toggle' }  }= section.section_title
   %div.collapsible-content 
     - section.lessons.each do |lesson|
       =link_to nil, url: '#', class: 'block px-6 py-2 flex item-center justify-between border-b border-black text-brand-gray' do

@@ -1,45 +1,21 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 
+input {
+  @apply bg-brand-secondary;
+}
 
+input:focus {
+  border: .3px solid grey;
+}
 
+input:visited {
+  @apply bg-brand-secondary;
+}
 
 @import "tailwindcss/utilities";
 
 //site variables
-$bg-color: #1d2625;
-$bg-color-light: #33403e;
-$secondary-bg-color: #293331;
-
-.panel {
-  transition: max-height .5s ease-out;
-}
-
-.panel-invisible {
-  max-height: 0;
-  transition: max-height .5s ease-out;
-}
-
-body,
-header {
-  background-color: $bg-color;
-}
-
-form {
-  input {
-    background-color: $bg-color-light;
-    border: 1px solid $secondary-bg-color;
-
-    &:focus {
-      background-color: $secondary-bg-color;
-    }
-  }
-}
-
-.purchase-summary {
-  background-color: $bg-color-light;
-}
-
 .wrap-collapsible {
 
   .lbl-toggle::before {
