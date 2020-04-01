@@ -4,12 +4,10 @@
       .flex.text-white.items-center(class="w-3/4")
         = image_tag "student/128/white.svg", class: 'h-32 w-32'
         %div.ml-6
-          %h1.text-4xl.font-bold Sign Up
+          %h1.text-5xl.font-bold.font-serif.tracking-tight Student Sign Up
           %p.text-teal-400.mt-4
             change your future with over 1000 professional courses
             %br.hidden.md:inline from the top leading teachers and professionals
-
-
       .text-white.flex.items-center.justify-between.text-center(class="w-1/4")
         = link_to "#", class: 'block mx-auto group px-5 py-2 rounded border border-white bg-transparent hover:bg-white' do
           %p.text-white.group-hover:text-teal-600 Questions?
@@ -41,8 +39,8 @@
         -# .flex.items-center.justify-center
           -# = render "devise/shared/links"
     %div.w-full.ml-6.pt-4
-      .purchase-summary.p-4.rounded-lg
-        %h3.mb-1mb-3.uppercase.text-sm.font-bold.tracking-tighter.Purchase summary
+      .bg-brand-secondary.p-4.rounded-lg
+        %h3.mb-1.mb-3.uppercase.text-sm.font-bold.tracking-tighter.Purchase summary
         %div.flex.mt-3.justify-between
           %strong.text-gray-500 Subcription
           %strong Student

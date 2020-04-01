@@ -1,0 +1,76 @@
+.bg-teal-800
+  .max-w-screen-lg.mx-auto
+    .flex.py-16
+      .flex.text-white.items-center(class="w-3/4")
+        = image_tag "teacher/128/white.svg", class: 'h-32 w-32'
+        %div.ml-6
+          %h1.text-5xl.font-bold.font-serif.tracking-tight Instrcutor Sign Up
+          %p.text-teal-400.mt-4
+            change your future with over 1000 professional courses
+            %br.hidden.md:inline from the top leading teachers and professionals
+      .text-white.flex.items-center.justify-between.text-center(class="w-1/4")
+        = link_to "#", class: 'block mx-auto group px-5 py-2 rounded border border-white bg-transparent hover:bg-white' do
+          %p.text-white.group-hover:text-teal-600 Questions?
+          %p.text-teal-200.group-hover:text-gray-500 Visit our Help Center
+
+.max-w-screen-lg.mx-auto.mt-10.px-6
+  .flex.justify-around
+    %div.w-full
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = render "devise/shared/error_messages", resource: resource
+        .field.mt-4
+          = f.label :full_name, class: 'text-xs text-gray-400'
+          %br/
+          = f.text_field :full_name, autofocus: true, autocomplete: "name", class: 'mt-1 relative block w-full px-4 py-2 placeholder-gray-500 rounded-md focus:outline-none focus:z-10 sm:text-sm sm:leading-5', placeholder: 'Email address...'
+        .field.mt-4
+          = f.label :email
+          %br/
+          = f.email_field :email, autocomplete: "email", class: 'mt-1 relative block w-full px-4 py-2 placeholder-gray-500 rounded-md focus:outline-none focus:z-10 sm:text-sm sm:leading-5', placeholder: 'Email address...'
+        .field.mt-4
+          = f.label :password
+          - if @minimum_password_length
+            %em
+              (#{@minimum_password_length} characters minimum)
+          %br/
+          = f.password_field :password, autocomplete: "new-password", class: 'mt-1 relative block w-full px-4 py-2 placeholder-gray-500 rounded-md focus:outline-none focus:z-10 sm:text-sm sm:leading-5', placeholder: 'Email address...'
+        .field.mt-4
+          = f.label :password_confirmation
+          %br/
+          = f.password_field :password_confirmation, autocomplete: "new-password", class: 'mt-1 relative block w-full px-4 py-2 placeholder-gray-500 rounded-md focus:outline-none focus:z-10 sm:text-sm sm:leading-5', placeholder: 'Email address...'
+        .actions.mt-2
+          = f.submit "Sign up", class: 'cursor-pointer mt-2 px-10 py-1 text-white text-2xl bg-red-800 hover:bg-red-700 font-bold rounded-md'
+
+    %div.w-full.ml-6.mt-3.pt-4
+      .bg-brand-secondary.p-4.rounded-lg
+        %h3.mb-1.mb-3.uppercase.text-sm.font-bold.tracking-tighter.Purchase summary
+        %div.flex.mt-3.justify-between
+          %strong.text-gray-500 Become part of out Team
+          %strong Instructor
+        %div.mt-3.border-b.text-gray-600.border-black
+          %div.flex.items-center
+            %span
+              %svg.h-6.w-6.text-gray-500{xmlns: "http://www.w3.org/2000/svg", fill: 'currentColor'}
+                %path{:d => "M13.5 2L6 9.5 2.5 6 0 8.5l6 6 10-10z"}
+            %p.ml-3.mb-4 Sell your Courses to the largest Online learning Platform.
+          %div.flex.items-center
+            %span
+              %svg.h-6.w-6.text-gray-500{xmlns: "http://www.w3.org/2000/svg", fill: 'currentColor'}
+                %path{:d => "M13.5 2L6 9.5 2.5 6 0 8.5l6 6 10-10z"}
+            %p.ml-3.mb-4 Access to over 1000 high quality courses.
+      .bg-brand-secondary.p-4.rounded-lg
+        %h3.mb-1.mb-3.uppercase.text-sm.font-bold.tracking-tighter.Purchase summary
+        %div.flex.mt-3.justify-between
+          %strong.text-gray-500 Become part of out Team
+          %strong Instructor
+        %div.mt-3.border-b.text-gray-600.border-black
+          %div.flex.items-center
+            %span
+              %svg.h-6.w-6.text-gray-500{xmlns: "http://www.w3.org/2000/svg", fill: 'currentColor'}
+                %path{:d => "M13.5 2L6 9.5 2.5 6 0 8.5l6 6 10-10z"}
+            %p.ml-3.mb-4 Sell your Courses to the largest Online learning Platform.
+          %div.flex.items-center
+            %span
+              %svg.h-6.w-6.text-gray-500{xmlns: "http://www.w3.org/2000/svg", fill: 'currentColor'}
+                %path{:d => "M13.5 2L6 9.5 2.5 6 0 8.5l6 6 10-10z"}
+            %p.ml-3.mb-4 Access to over 1000 high quality courses.
+
