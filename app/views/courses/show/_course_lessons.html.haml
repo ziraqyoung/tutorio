@@ -1,0 +1,11 @@
+%div.border-b-2.border-b-2b.border-brand-secondary.pb-10
+  %div.max-w-screen-lg.mx-auto.pt-12
+    %h3.text-xl.font-bold.font-serif Table of Contents
+    %div.flex.rounded-lg.mt-4.justify-between.bg-brand-secondary
+      %div{ class: "w-7/12 py-2 border-r border-black"}
+        %div.flex.flex-col.w-full{ data: { controller: 'accordion'} }
+          - @course.sections.each do  |section|
+            = render partial: 'courses/show/course_lessons/section_lessons', locals: { section: section }
+      %div{ class: "w-5/12 m-auto"}
+        = render partial: 'courses/show/course_lessons/not_logged_in_links'
+

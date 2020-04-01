@@ -1,0 +1,22 @@
+%div.border-b-2.border-b-2b.border-brand-secondary.py-2
+  .max-w-screen-lg.mx-auto.text-white
+    .flex.items-center.justify-between
+      %div.flex.items-center
+        %p image
+        %div.flex.flex-col.ml-6
+          %span= @course.instructor.full_name
+          %span.-mt-2.text-brand-gray instructor
+        %div.flex.ml-6.items-center
+          %span.text-brand-gray
+            %svg.h-5.w-5.fill-current{:viewbox => "0 0 20 20", :xmlns => "http://www.w3.org/2000/svg"}
+              %path{:d => "M10 20a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-1-7.59V4h2v5.59l3.95 3.95-1.41 1.41L9 10.41z"}
+          %span.ml-2= @course.duration
+        %div.flex.ml-6.items-center
+          %span.text-brand-gray
+            %svg.h-5.w-5.fill-current{:viewbox => "0 0 20 20", :xmlns => "http://www.w3.org/2000/svg"}
+              %path{:d => "M10 1l10 6-10 6L0 7l10-6zm6.67 10L20 13l-10 6-10-6 3.33-2L10 15l6.67-4z"}
+          %span.ml-2= @course.level
+      %div
+        %p rating
+
+

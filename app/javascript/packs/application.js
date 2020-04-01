@@ -17,14 +17,14 @@ import "controllers"
 
 
 document.addEventListener('turbolinks:load', function() {
-	tippy('[data-tippy-content]', {
-		theme: 'light-border',
-		allowHTML: true,
-		trigger: 'click',
-		hideOnClick: true,
-		placement: 'auto',
-		interactive: true
-	});
+  tippy('[data-tippy-content]', {
+    theme: 'light-border',
+    allowHTML: true,
+    trigger: 'click',
+    hideOnClick: true,
+    placement: 'auto',
+    interactive: true
+  });
 })
 
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)

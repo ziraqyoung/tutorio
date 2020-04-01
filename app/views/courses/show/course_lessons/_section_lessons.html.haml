@@ -1,0 +1,13 @@
+%div.wrap-collapsible
+  %input.hidden.toggle{ id: section.id, type: "checkbox", data: { target: 'toggle' } }
+  %label.lbl-toggle.block.w-full.cursor-pointer.px-4.py-2.text-left.hover:text-teal-600{ for: section.id, data: { target: 'lbl-toggle' }  }= section.section_title
+  %div.collapsible-content 
+    - section.lessons.each do |lesson|
+      =link_to nil, url: '#', class: 'block px-6 py-2 flex item-center justify-between border-b border-black text-brand-gray' do
+        %div.collapsible-inner.flex.items-center
+          %span.text-teal-600.text-xs
+            %svg.fill-current.h-4.w-4{xmlns: "http://www.w3.org/2000/svg", viewBox:"0 0 20 20" }
+              %path{ d:"M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM7 6l8 4-8 4V6z" }
+          %span.ml-2.text-xs= lesson.lesson_title
+        %span.text-xs 1m 10s
+
