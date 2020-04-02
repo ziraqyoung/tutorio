@@ -6,6 +6,5 @@ export default class extends Controller {
 
   showOverlay(event) {
     event.preventDefault();
-    console.log(this.element.querySelectorAll('a.overlay'));
   }
 }
