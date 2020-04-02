@@ -1,8 +1,38 @@
-.course-overlay {
-  top: 80%;
-  transition: top .5s ease-out;
-}
+// .course-overlay {
+//   top: 80%;
+//   transition: top .5s ease-out;
+// }
 
-.course-overlay-selected {
-  top: 50%;
+// .course-overlay-selected {
+//   top: 50%;
+// }
+
+.course-container {
+	.overlay-top {
+		top: 0;
+		bottom: 100%;
+		opacity: 0;
+		// max-height: 0;
+		// overflow: hidden;
+		transition: bottom .5s, opacity .2s ease-out;
+	}
+	.overlay-bottom {
+		top: 82%;
+		// top: 50%;
+		bottom: 0;
+		transition: top .5s ease-out;
+	}
+
+	&:hover {
+		.overlay-top {
+			// bottom: 50%;
+			opacity: 1;
+			bottom: 50%;
+			// max-height: 100vh;
+		}
+
+		.overlay-bottom {
+			top: 50%;
+		}
+	}
 }

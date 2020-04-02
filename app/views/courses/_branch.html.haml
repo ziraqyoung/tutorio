@@ -9,5 +9,5 @@
 
 %div.max-w-screen-lg.mx-auto.px-4.pt-10
   %h2.text-xl.text-gray-400.font-semibold.capitalize Top #{branch} Courses
-  %div.mt-4.grid.grid-cols.sm:grid-cols-2.md:grid-cols-3.lg:grid-cols-4.gap-4
+  %div.mt-4.grid.grid-cols.sm:grid-cols-2.md:grid-cols-3.lg:grid-cols-4.gap-4{ data: { controller: 'course-overlay' }}
     = render @courses
