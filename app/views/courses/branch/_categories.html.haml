@@ -1,7 +1,5 @@
-- branch_path_name = "#{params[:action]}_courses_path"
 %div.max-w-screen-xl.mt-1.mr-auto.pb-4
   = link_to 'Library', '#', class: 'inline-block text-gray-500 ml-6 ont-semibold hover:text-white'
   = link_to 'Explore', '#', class: 'ml-6 text-gray-500 font-semibold hover:text-white'
-  - @branches.each do |branch|
-    = link_to_if (branch == params[:action]), branch, send(branch_path_name), class: "ml-6 text-gray-500 font-semibold hover:text-white border-b-4 border-teal-600" do
-      = link_to branch, {action: branch}, class: 'ml-6 text-gray-500 font-semibold hover:text-white'
+
+  = render @branches

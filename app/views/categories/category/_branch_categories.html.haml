@@ -1,0 +1,4 @@
+- branch_path_name = "#{params[:action]}_courses_path"
+
+= link_to_if (category.branch == params[:action]), category.branch, send(branch_path_name), class: "ml-6 text-gray-500 font-semibold hover:text-white border-b-4 border-teal-600" do
+  = link_to category.branch, { action: category.branch}, class: 'ml-6 text-gray-500 font-semibold hover:text-white'

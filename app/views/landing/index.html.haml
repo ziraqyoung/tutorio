@@ -18,11 +18,7 @@
       %div.flex.items-center
         %h3.text-sm.uppercase Popular Topics
         %div.pl-4
-          %button.ml-1.bg-transparent.border.rounded-full.px-4.py-1.border-brand-gray.text-brand-gray.hover:bg-brand-gray.hover:text-white.transition-colors.duration-300 All
-          %button.ml-1.bg-transparent.border.rounded-full.px-4.py-1.border-brand-gray.text-brand-gray.hover:bg-brand-gray.hover:text-white.transition-colors.duration-300 Development
-          %button.ml-1.bg-transparent.border.rounded-full.px-4.py-1.border-brand-gray.text-brand-gray.hover:bg-brand-gray.hover:text-white.transition-colors.duration-300 Design
-          %button.ml-1.bg-transparent.border.rounded-full.px-4.py-1.border-brand-gray.text-brand-gray.hover:bg-brand-gray.hover:text-white.transition-colors.duration-300 Photography
-          %button.ml-1.bg-transparent.border.rounded-full.px-4.py-1.border-brand-gray.text-brand-gray.hover:bg-brand-gray.hover:text-white.transition-colors.duration-300 Business
+          = render @branches
     %div.pt-4
       %div.mt-4.grid.grid-cols.sm:grid-cols-2.md:grid-cols-3.lg:grid-cols-4.gap-4{ data: { controller: 'course-overlay' }}
         = render @top_courses
