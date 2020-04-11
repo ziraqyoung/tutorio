@@ -18,9 +18,10 @@
       %div.flex.items-center
         %h3.text-sm.uppercase Popular Topics
         %div.pl-4
+          =link_to 'All', root_path(branch: 'all'), remote: true, class: 'inline-block ml-1 bg-transparent border rounded-full px-4 py-1 border-brand-gray text-brand-gray hover:bg-brand-gray hover:text-white transition-colors duration-300'
           = render @branches
     %div.pt-4
-      %div.mt-4.grid.grid-cols.sm:grid-cols-2.md:grid-cols-3.lg:grid-cols-4.gap-4{ data: { controller: 'course-overlay' }}
+      %div#landing-top-courses.mt-4.grid.grid-cols.sm:grid-cols-2.md:grid-cols-3.lg:grid-cols-4.gap-4{ data: { controller: 'course-overlay' }}
         = render @top_courses
     %div.pt-10
       %button.block.mx-auto.px-4.py-2.bg-transparent.border.hover:bg-brand-gray.border-brand-gray.text-brand-gray.rounded.hover:text-white.transition-colors.duration-300 Browse Courses
